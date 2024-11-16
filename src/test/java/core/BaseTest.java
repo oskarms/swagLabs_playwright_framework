@@ -13,6 +13,6 @@ public class BaseTest {
     @BeforeClass
     protected void init(){
         playwright = Playwright.create();
-        browser = playwright.chromium().launch();
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
     }
 }
