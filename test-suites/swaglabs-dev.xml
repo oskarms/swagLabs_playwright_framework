@@ -3,8 +3,9 @@
 <suite name="Swag Labs - Test suite, parallel" parallel="classes" thread-count="2">
     <test name="Swag Labs - Test suite, parallel">
         <classes>
-            <class name="tests.AddProductsToCart"/>
-            <class name="tests.LoginUser"/>
+            <class name="tests.AddProductsToCartTest"/>
+            <class name="tests.LoginUserTests"/>
+            <class name="tests.LogoutTest"/>
         </classes>
     </test>
 </suite>
