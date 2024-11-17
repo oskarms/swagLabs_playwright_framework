@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CertumSign" verbose="1">
+
+    <test name="Default">
+        <classes>
+            <class name="tests.AddProductBackpackToCart"/>
+            <class name="tests.LoginByLockedUser"/>
+            <class name="tests.LoginByUserWithWrongCredential"/>
+        </classes>
+    </test>
+</suite>
+
