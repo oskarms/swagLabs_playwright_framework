@@ -12,7 +12,8 @@ public class ProductsPage {
     private final Locator inventoryItemLabel;
     private final Locator buttonAddToCartBackpack;
     private final Locator shoppingCartBadge;
-
+    private final Locator titlePage;
+    private final Locator iconCart;
 
     public ProductsPage(Page page) {
         this.page = page;
@@ -21,10 +22,15 @@ public class ProductsPage {
         this.inventoryItemLabel = page.locator("//div[contains(@class, 'inventory_item_label')]");
         this.buttonAddToCartBackpack = page.locator("//*[@id=\"add-to-cart-sauce-labs-backpack\"]");
         this.shoppingCartBadge = page.locator("//*[@id=\"shopping_cart_container\"]/a/span");
+        this.titlePage = page.locator("//*[@id=\"header_container\"]/div[2]/span");
+        this.iconCart = page.locator("//*[@id=\"shopping_cart_container\"]/a");
     }
 
     public void checkAppLogo(String textOfLogo){
         assertThat(appLogo).containsText(textOfLogo);
+    }
+    public void checkNameOfThePage(String titleOfPage){
+        assertThat(titlePage).containsText(titleOfPage);
     }
     public void addBackpackToBasket(){
         buttonAddToCartBackpack.click();
@@ -36,9 +42,10 @@ public class ProductsPage {
         assertThat(shoppingCartBadge).isVisible();
     }
     public void checkAmountOfItemsInShoppingCartBadge(String expectedAmountOfItemsInCardBadge){
-        assertThat(shoppingCartBadge).hasValue(expectedAmountOfItemsInCardBadge);
+        assertThat(shoppingCartBadge).hasText(expectedAmountOfItemsInCardBadge);
     }
-
-
+    public void clickOnCart() {
+        iconCart.click();
+    }
 }
 
