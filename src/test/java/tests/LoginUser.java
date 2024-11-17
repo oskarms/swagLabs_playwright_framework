@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import utils.User;
 
-public class LoginByLockedUser extends BaseTest {
+public class LoginUser extends BaseTest {
     @BeforeMethod
     void createContextAndPage() {
         context = browser.newContext();
@@ -21,6 +21,18 @@ public class LoginByLockedUser extends BaseTest {
         loginPage.checkErrorLockedUserLoginIsHidden();
         loginPage.login(User.LOCKED_OUT.getUserLogin(), User.LOCKED_OUT.getUserPassword());
         loginPage.checkErrorLockedUserLoginIsVisible("Epic sadface: Sorry, this user has been locked out.");
+        loginPage.closeErrorContainer();
+        loginPage.checkErrorLockedUserLoginIsHidden();
+    }
+
+    @Test
+    public void loginByNotExistUser() {
+        page.navigate(url);
+        LoginPage loginPage = new LoginPage(page);
+        loginPage.checkLoginPage("Swag Labs");
+        loginPage.checkErrorLockedUserLoginIsHidden();
+        loginPage.login(User.NOT_EXIST.getUserLogin(), User.NOT_EXIST.getUserPassword());
+        loginPage.checkErrorLockedUserLoginIsVisible("Epic sadface: Username and password do not match any user in this service");
         loginPage.closeErrorContainer();
         loginPage.checkErrorLockedUserLoginIsHidden();
     }

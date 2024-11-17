@@ -1,12 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="CertumSign" verbose="1">
-
-    <test name="Default">
+<suite name="Swag Labs - Test suite, parallel" parallel="classes" thread-count="2">
+    <test name="Swag Labs - Test suite, parallel">
         <classes>
             <class name="tests.AddProductBackpackToCart"/>
-            <class name="tests.LoginByLockedUser"/>
-            <class name="tests.LoginByUserWithWrongCredential"/>
+            <class name="tests.LoginUser"/>
         </classes>
     </test>
 </suite>
