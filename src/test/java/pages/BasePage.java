@@ -11,6 +11,7 @@ public class BasePage {
     private final Locator titlePage;
     private final Locator buttonOpenMenu;
     private final Locator dashboardMenu;
+    private final Locator buttonLogout;
     private final Locator buttonResetAppState;
     private final Locator buttonCloseMenu;
 
@@ -20,8 +21,12 @@ public class BasePage {
         this.titlePage =  page.locator("//*[@id=\"header_container\"]/div[2]/span");
         this.buttonOpenMenu =  page.locator("//*[@id=\"react-burger-menu-btn\"]");
         this.dashboardMenu =  page.locator("//*[@id=\"menu_button_container\"]/div/div[2]");
+        this.buttonLogout =  page.locator("//*[@id=\"logout_sidebar_link\"]");
         this.buttonResetAppState =  page.locator("//*[@id=\"reset_sidebar_link\"]");
         this.buttonCloseMenu =  page.locator("//*[@id=\"react-burger-cross-btn\"]");
+    }
+    public void clickLogout(){
+        buttonLogout.click();
     }
     public void resetAppState(){
         buttonResetAppState.click();

@@ -9,7 +9,7 @@ import pages.LoginPage;
 import pages.ProductsPage;
 import utils.User;
 
-public class AddProductsToCart extends BaseTest {
+public class AddProductsToCartTest extends BaseTest {
 
     final private String logoName = "Swag Labs";
 

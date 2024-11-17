@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import utils.User;
 
-public class LoginUser extends BaseTest {
+public class LoginUserTests extends BaseTest {
     @BeforeMethod
     void createContextAndPage() {
         context = browser.newContext();
@@ -14,7 +14,7 @@ public class LoginUser extends BaseTest {
     }
 
     @Test
-    public void loginByLockedUser() {
+    public void loginByLockedUserTest() {
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage("Swag Labs");
@@ -26,7 +26,7 @@ public class LoginUser extends BaseTest {
     }
 
     @Test
-    public void loginByNotExistUser() {
+    public void loginByNotExistUserTest() {
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage("Swag Labs");
