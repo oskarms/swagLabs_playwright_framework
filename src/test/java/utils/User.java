@@ -2,11 +2,12 @@ package utils;
 
 public enum User {
     STANDARD("standard_user", "secret_sauce"),
+    LOCKED_OUT("locked_out_user", "secret_sauce"),
     PROBLEM("problem_user", "secret_sauce"),
     ERROR("error_user", "secret_sauce");
 
-    private String userLogin;
-    private String userPassword;
+    final private String userLogin;
+    final private String userPassword;
 
     User(String userLogin, String userPassword) {
         this.userLogin = userLogin;
