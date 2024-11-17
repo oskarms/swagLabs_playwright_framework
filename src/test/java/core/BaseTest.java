@@ -1,6 +1,7 @@
 package core;
 
 import com.microsoft.playwright.*;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
@@ -14,5 +15,10 @@ public class BaseTest {
     protected void init(){
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+    }
+
+    @AfterClass
+    protected void close(){
+        browser.close();
     }
 }
