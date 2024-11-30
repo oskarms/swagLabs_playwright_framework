@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.*;
 import utils.User;
 
-public class FinishingOrdersTest extends BaseTest {
+public class CompleteOrderTest extends BaseTest {
 
     final private String logoName = "Swag Labs";
 
@@ -17,7 +17,7 @@ public class FinishingOrdersTest extends BaseTest {
     }
 
     @Test
-    public void finishBackpackOrder(){
+    public void completeBackpackOrder(){
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage(logoName);
@@ -39,6 +39,8 @@ public class FinishingOrdersTest extends BaseTest {
         cartPage.checkHowManyItemsInCart(1);
         cartPage.checkItemName(1, "Sauce Labs Backpack");
         cartPage.checkItemDescribe(1, "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.");
+        cartPage.checkItemPrice(1, "29.99");
+        cartPage.checkQuantityOfItem(1, "1");
         cartPage.clickCheckout();
 
         basePage.checkTitleOfThePage("Checkout: Your Information");

@@ -23,11 +23,16 @@ public class CartPage{
     public void clickCheckout() {
         buttonCheckout.click();
     }
-
     public void checkItemName(int numberItemOnList, String itemName){
         assertThat(page.locator("//*[@id=\"cart_contents_container\"]/div/div[1]/div[contains(@class, 'cart_item')]["+numberItemOnList+"]/div[2]/a/div")).hasText(itemName);
     }
     public void checkItemDescribe(int numberItemOnlist, String itemDescribe){
         assertThat(page.locator("//*[@id=\"cart_contents_container\"]/div/div[1]/div[contains(@class, 'cart_item')]["+numberItemOnlist+"]/div[2]/div[contains(@class, 'inventory_item_desc')]")).hasText(itemDescribe);
+    }
+    public void checkItemPrice(int numberItemOnlist, String itemPrice) {
+        assertThat(page.locator("//*[@id=\"cart_contents_container\"]/div/div[1]/div[contains(@class, 'cart_item')]["+numberItemOnlist+"]/div[2]/div[2]/div")).hasText(itemPrice);
+    }
+    public void checkQuantityOfItem(int numberItemOnlist, String quantityOfItem) {
+        assertThat(page.locator("//*[@id=\"cart_contents_container\"]/div/div[1]/div[contains(@class, 'cart_item')]["+numberItemOnlist+"]/div[contains(@class, 'cart_quantity')]")).hasText(quantityOfItem);
     }
 }
