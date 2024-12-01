@@ -18,7 +18,6 @@ public class BaseTest {
     @Parameters({"browserParameter"})
     protected void init(@Optional("chrome") String browserParameter) throws BrowserException {
         playwright = Playwright.create();
-        System.out.println(browserParameter);
         browser = runInExpectedBrowser(browserParameter);
     }
 

@@ -2,11 +2,12 @@
 
 <suite name="Swag Labs - Test suite, parallel" parallel="classes" thread-count="2">
     <test name="Swag Labs - Test suite, parallel">
-        <parameter name="browserParameter" value="firefox"/>
+        <parameter name="browserParameter" value="chrome"/>
         <classes>
-            <class name="tests.AddProductsToCartTest"/>
             <class name="tests.LoginUserTests"/>
             <class name="tests.LogoutTest"/>
+            <class name="tests.AddProductsToCartTest"/>
+            <class name="tests.OrderTest"/>
         </classes>
     </test>
 </suite>
