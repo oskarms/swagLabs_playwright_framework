@@ -8,6 +8,7 @@
             <class name="tests.LogoutTest"/>
             <class name="tests.AddProductsToCartTest"/>
             <class name="tests.OrderTest"/>
+            <class name="tests.RedirectionToSaucelabsTest"/>
         </classes>
     </test>
 </suite>

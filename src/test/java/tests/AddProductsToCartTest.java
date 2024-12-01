@@ -64,7 +64,7 @@ public class AddProductsToCartTest extends BaseTest {
     }
 
     @Test
-    public void addProductAndRemoveFromCart(){
+    public void addProductAndRemoveFromCartTest(){
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage(logoName);
@@ -87,7 +87,7 @@ public class AddProductsToCartTest extends BaseTest {
     }
 
     @Test
-    public void addTwoProductsAndRemoveOneProductFromCart(){
+    public void addTwoProductsAndRemoveOneProductFromCartTest(){
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage(logoName);
@@ -112,7 +112,7 @@ public class AddProductsToCartTest extends BaseTest {
     }
 
     @Test
-    public void removeAllProductsFromCart(){
+    public void removeAllProductsFromCartTest(){
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage(logoName);
