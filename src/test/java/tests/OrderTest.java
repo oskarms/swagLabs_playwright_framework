@@ -14,7 +14,7 @@ public class OrderTest extends BaseTest {
         page = context.newPage();
     }
     @Test
-    public void completeBackpackOrder(){
+    public void completeBackpackOrderTest(){
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage(logoName);
@@ -65,7 +65,7 @@ public class OrderTest extends BaseTest {
         productsPage.shoppingCartBadgeIsHidden();
     }
     @Test
-    public void completeMultipleItemsOrder(){
+    public void completeMultipleItemsOrderTest(){
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage(logoName);
@@ -126,7 +126,7 @@ public class OrderTest extends BaseTest {
         productsPage.shoppingCartBadgeIsHidden();
     }
     @Test
-    public void completeOrderWithoutShippingDetails_shouldThrowErrorMessage(){
+    public void completeOrderWithoutShippingDetails_shouldThrowErrorMessageTest(){
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage(logoName);
@@ -166,7 +166,7 @@ public class OrderTest extends BaseTest {
         shippingDetailsPage.checkErrorMessage("Error: Postal Code is required");
     }
     @Test
-    public void beforeFinishOrder_backToProducts(){
+    public void beforeFinishOrder_backToProductsTest(){
         page.navigate(url);
         LoginPage loginPage = new LoginPage(page);
         loginPage.checkLoginPage(logoName);
